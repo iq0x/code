@@ -10,3 +10,8 @@ function openMenu()
         open.style.display = "none";
     }
 } 
+
+function explode() 
+{
+    document.getElementById('rocket').style.backgroundImage="url(img/booom.gif)";
+} 
