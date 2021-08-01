@@ -14,4 +14,5 @@ function openMenu()
 function explode() 
 {
     document.getElementById('rocket').style.backgroundImage="url(img/booom.gif)";
+    document.getElementById("bubble").innerHTML = "test";
 } 
