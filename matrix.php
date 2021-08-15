@@ -33,6 +33,13 @@
                  }
                 
             };
+            
+            function test(field_id)
+            {
+               
+                var x = document.getElementById(field_id).textContent; 
+                alert(x);
+            }
         </script>
     </head>
     <body>
@@ -45,7 +52,7 @@
             $fieldnr++;
             $i++;
          ?>
-         <div id="field<?php echo $fieldnr; ?>"></div>
+         <div id="field<?php echo $fieldnr; ?>" onclick="test(this.id)"></div>
          
          <?php
         } 
