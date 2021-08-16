@@ -3,60 +3,55 @@
         <style>
             #screen
             {
-             width: 700px;
+             width: 1200px;
              height: 500px;
-            }
-            #field1
-    
+             font-size: 2em;
+             text-align: center;
             }
         </style>
         <script>
-            var number;
-            function getRandomInt(max) 
-            {
-                return Math.floor(Math.random() * max);
-            }
+            var number = 0;
+            var checked;
             
             window.onload = function()
             {
-                
                  for (var i = 0; i < 100; i++ )  
                  {
-                    number = getRandomInt(20);
+                    number++;
                     var id = "field" + (i + 1);
                     document.getElementById(id).innerHTML = number;
                     document.getElementById(id).style.backgroundColor="red";
-                    document.getElementById(id).style.height = "50px";
-                    document.getElementById(id).style.width = "50px";
+                    document.getElementById(id).style.height = "100px";
+                    document.getElementById(id).style.width = "100px";
                     document.getElementById(id).style.float = "left";
                     document.getElementById(id).style.margin = "5px";
                  }
-                
             };
             
-            function test(field_id)
+            function check(field_id)
             {
-               
                 var x = document.getElementById(field_id).textContent; 
-                alert(x);
+                document.getElementById(field_id).style.backgroundColor="green";
+                document.getElementById(field_id).style.backgroundImage="url(img2/stonemine.gif)"; 
+                checked = "field" + x + "id";
+                
+                document.getElementById("output").innerHTML = rename;
             }
         </script>
     </head>
     <body>
         <div id="screen">
-        <?php
-        $i = 1;
-        $fieldnr = 0;
-        while ($i < 100)
-        {
-            $fieldnr++;
-            $i++;
-         ?>
-         <div id="field<?php echo $fieldnr; ?>" onclick="test(this.id)"></div>
-         
-         <?php
-        } 
-        ?>
+            <?php
+            $i = 1;
+            $fieldnr = 0;
+            while ($i < 100)
+            {
+                $fieldnr++;
+                $i++;
+             ?>
+             <div id="field<?php echo $fieldnr; ?>" onclick="check(this.id)"></div>
+             <?php } ?>
         </div>
+        <div id="output"></div>
     </body>
 </html>
