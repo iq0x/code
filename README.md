@@ -1,2 +1,2 @@
-# js
-java script
+# code snippets
+jojo
